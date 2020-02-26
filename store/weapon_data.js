@@ -71,19 +71,19 @@ export const getters = {
   },
   conditionWeapons (state) {
     let conditionWeapons = [ ...state.data ]
-    if (state.conditions.type) {
+    if (state.conditions.type && state.conditions.type.length > 0) {
       conditionWeapons = conditionWeapons.filter((weapon) => {
-        return weapon.type.key === state.conditions.type
+        return state.conditions.type.includes(weapon.type.key)
       })
     }
-    if (state.conditions.sub) {
+    if (state.conditions.sub && state.conditions.sub.length > 0) {
       conditionWeapons = conditionWeapons.filter((weapon) => {
-        return weapon.sub.key === state.conditions.sub
+        return state.conditions.sub.includes(weapon.sub.key)
       })
     }
-    if (state.conditions.special) {
+    if (state.conditions.special && state.conditions.special.length > 0) {
       conditionWeapons = conditionWeapons.filter((weapon) => {
-        return weapon.special.key === state.conditions.special
+        return state.conditions.special.includes(weapon.special.key)
       })
     }
     return conditionWeapons

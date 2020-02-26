@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="condition-container container">
-      <el-select v-model="selectedType" clearable placeholder="ブキ系統">
+      <el-select v-model="selectedType" clearable multiple placeholder="ブキ系統">
         <el-option
           v-for="weaponType in weaponTypes"
           :key="weaponType.key"
@@ -9,7 +9,7 @@
           :value="weaponType.key"
         />
       </el-select>
-      <el-select v-model="selectedSub" clearable placeholder="サブ">
+      <el-select v-model="selectedSub" clearable multiple placeholder="サブ">
         <el-option
           v-for="weaponSub in weaponSubs"
           :key="weaponSub.key"
@@ -17,7 +17,7 @@
           :value="weaponSub.key"
         />
       </el-select>
-      <el-select v-model="selectedSpecial" clearable placeholder="スペシャル">
+      <el-select v-model="selectedSpecial" clearable multiple placeholder="スペシャル">
         <el-option
           v-for="weaponSpecial in weaponSpecials"
           :key="weaponSpecial.key"
@@ -69,9 +69,9 @@
 export default {
   data () {
     return {
-      selectedType: null,
-      selectedSub: null,
-      selectedSpecial: null,
+      selectedType: [],
+      selectedSub: [],
+      selectedSpecial: [],
       playerCount: 8,
       playerNames: [],
       randomChoice: []
