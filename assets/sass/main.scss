@@ -1,0 +1,8 @@
+@font-face {
+  font-family: 'splatfont'; // <-好きな名前をつけれます。
+  src: url('../font//splatfont.ttf') format("truetype");
+}
+
+* {
+  font-family: 'splatfont';
+}

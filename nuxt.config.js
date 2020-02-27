@@ -2,6 +2,9 @@
 export default {
   mode: 'spa',
   srcDir: '.',
+  build: {
+    hardSource: true
+  },
   /*
   ** Headers of the page
   */
@@ -25,7 +28,8 @@ export default {
   */
   css: [
     'element-ui/lib/theme-chalk/index.css',
-    '@/assets/sass/element-variables.scss'
+    '@/assets/sass/element-variables.scss',
+    '@/assets/sass/main.scss'
   ],
   /*
   ** Plugins to load before mounting the App
